@@ -1,0 +1,24 @@
+<script>
+  
+    const {ipcRenderer} = require("electron")
+
+    console.log(process.env.PORTABLE_EXECUTABLE_DIR)
+
+    window.onload = () => {
+
+        ipcRenderer.on("sum-request", (event,data) => {
+          console.log(data)
+        })
+        
+    }
+
+    /*ipcRenderer.send("msg","hello from render")
+    ipcRenderer.on("reply", (e,d)=>{
+    console.log(d)	
+    })*/
+
+    /*;( async () => {
+    console.log( await ipcRenderer.invoke('an-action'))
+    })()*/
+
+</script>
